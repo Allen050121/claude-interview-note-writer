@@ -23,7 +23,20 @@ Use this layout:
     ...
 ```
 
-Before writing, inspect the target module index in `基础面试题/0.目录/` and at least 3 strong nearby topic files in the matching module folder. For Java-style tone and density, prefer comparing against files such as `基本数据类型.md`, `String StringBuffer StringBuilder.md`, and `异常处理.md` when they are relevant. Preserve the local naming, ordering, link style, and answer tone.
+Before writing or reviewing, inspect the target module index in `基础面试题/0.目录/` and choose reference notes from the same module whenever possible. Preserve the local naming, ordering, link style, and answer tone.
+
+## Reference Notes
+
+Use reference notes to imitate the user's existing style instead of inventing a generic AI template.
+
+Choose references in this order:
+
+1. Same topic file, if rewriting existing content.
+2. Strong nearby files in the same module folder.
+3. The matching module index file in `基础面试题/0.目录/`.
+4. Java foundation files only as fallback style references, especially `基本数据类型.md`, `String StringBuffer StringBuilder.md`, `接口和抽象类.md`, `多态.md`, and `异常处理.md`.
+
+When selecting reference files, prefer notes that are prose-first, use real `###` interview questions, have useful extension questions, and avoid code-heavy explanations. Do not blindly copy Java-specific wording into non-Java modules; use the Java notes mainly to learn answer density, directness, and structure.
 
 ## Module Index Format
 
@@ -67,21 +80,16 @@ Use this shape:
 Rules:
 
 - Use only `### 问题？` as the primary structure.
+- Do not add fixed template subheadings inside an answer, such as `定义/区别`、`底层原理`、`使用场景`、`常见坑`、`项目实践`、`面试追问`. These are thinking dimensions, not visible headings.
 - Put the most central,最高频,最能概括该知识点的问题 first. The first answer should be useful within the first screen after opening the file.
-- Follow with extension questions from basic to deeper:
-  - 定义/区别
-  - 底层原理
-  - 使用场景
-  - 常见坑
-  - 性能/并发/内存影响
-  - JDK 版本差异
-  - 项目实践
-  - 面试官可能继续追问的问题
+- Follow with natural extension questions from basic to deeper. Depending on the topic, choose useful angles such as 定义/区别、底层原理、使用场景、常见坑、性能/并发/内存影响、JDK/框架版本差异、项目实践、面试官可能继续追问的问题.
+- Do not force every topic or every answer to cover all of those angles. If an angle is irrelevant, omit it.
+- When an angle is important, express it as a real `###` interview question or weave it into the prose answer; do not expose the angle name as a section label.
 - Prefer 8-15 questions for a normal topic. Use fewer for tiny topics and more for broad topics.
 - Every normal answer should have enough substance for an interview, but do not force the same template onto every question. Choose the natural shape of the answer based on the question type.
 - Do not write thin one-sentence answers unless the question is genuinely trivial.
 - Keep each answer mostly prose. Use code only when prose cannot make the point clear.
-- When adding code, use short fenced Java snippets and immediately explain what the code demonstrates.
+- When adding code, use short fenced snippets in the relevant language and immediately explain what the code demonstrates.
 - Avoid turning a note into a code tutorial. In most files, code should be occasional support, not the main body.
 
 ## Answer Style
@@ -93,6 +101,7 @@ Write in concise Chinese interview style:
 - Highlight key terms with `**加粗**` sparingly.
 - Use practical wording: "实际项目中..."、"面试时可以这样说..."、"需要注意的是...".
 - Add "为什么", "什么时候用", "容易踩什么坑", or "和谁对比" only when the current question needs it. Do not mechanically include all of them in every answer.
+- Keep the structure hidden inside the writing. The note should read like the user's existing notes, not like a generated template.
 - Avoid textbook padding, empty definitions, pure copy-paste API lists, and generic AI filler.
 - Do not pad with low-value code examples. If an interviewer would not care about the code during an oral interview, explain the point in prose instead.
 - Do not be lazy: if a question is important, include the details that make that specific answer useful, such as the key mechanism, contrast, boundary condition, or practical caveat.
