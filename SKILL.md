@@ -1,11 +1,11 @@
 ---
 name: interview-note-writer
-description: Write or reorganize Chinese interview 八股文 notes in this vault's 基础面试题 structure. Use when creating, expanding, or standardizing Java/Python/backend/AI interview knowledge notes with module indexes under 基础面试题/0.目录 and per-topic Markdown files under 基础面试题 module folders such as 1.Java基础.
+description: Write, reorganize, review, or rewrite Chinese interview 八股文 notes in this vault's 基础面试题 structure. Use when creating, expanding, standardizing, or checking old Java/Python/backend/AI interview notes within a user-specified range, especially when notes may contain too much code, too little prose explanation, weak question headings, or files that do not match the 三级标题问答 style.
 ---
 
 # Interview Note Writer
 
-Use this skill to create or update interview-prep notes that match this vault's existing `基础面试题` style.
+Use this skill to create, update, review, or rewrite interview-prep notes that match this vault's existing `基础面试题` style.
 
 ## Source Structure
 
@@ -110,6 +110,37 @@ Choose the answer shape from the question, following the existing Java notes:
 - Pitfall questions should explain the wrong practice and the reason it causes problems.
 - Very small factual questions can be brief. Do not inflate them just to meet a length target.
 
+## Review And Rewrite Old Notes
+
+When the user asks to check a range, inspect only that requested range unless the user asks for a wider pass. A range can be a module folder, several files, a directory plus its index file, or a topic list.
+
+For each file in scope, check whether it still works as an interview note:
+
+- It uses `### 问题？` headings that let the user quickly scan and jump.
+- The first question is the core interview question for that topic.
+- Answers are mostly prose and can be spoken in an interview.
+- Code blocks are short, necessary, and explained in words.
+- The file has enough meaningful extension questions.
+- The content matches nearby strong notes in tone and density.
+
+Flag a file for rewrite when any of these are true:
+
+- It is mostly code blocks, commands, or API snippets with little explanation.
+- A `###` question is followed only by code, with no interview-style answer.
+- It reads like a coding tutorial instead of an interview answer sheet.
+- It has very few questions for a broad topic.
+- It has headings that are vague labels instead of real interview questions.
+- It gives thin answers to important questions.
+
+Rewrite flagged files in place unless the user explicitly asks for review only. Keep the original topic, preserve useful code snippets, and convert the body into prose-first interview answers. Remove low-value code examples, but keep a minimal snippet when it is the clearest way to explain behavior.
+
+When reporting results, be concise:
+
+- Say which files were checked.
+- Say which files were rewritten and why.
+- Say which files looked acceptable.
+- Mention any files that need user judgment because the intended interview angle is unclear.
+
 ## Quality Checklist
 
 Before finishing:
@@ -121,4 +152,5 @@ Before finishing:
 - Answers are not too thin, but they also do not mechanically follow a fixed "结论 + 原因 + 场景 + 坑点 + 对比" formula.
 - Code snippets are short, correct, and used only to clarify.
 - Code does not dominate the note.
+- Old notes that are mostly code are rewritten into prose-first interview Q&A when the user asks to check a range.
 - Markdown remains UTF-8 and consistent with neighboring notes.
